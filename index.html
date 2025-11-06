@@ -1,0 +1,357 @@
+<html>
+    <head>
+        <style> 
+    body {  
+      font-family: "Montserrat", sans-serif;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+      text-shadow: 0 0 2px #fff, 0 0 4px #fff, 0 0 4px #fff;
+      z-index: 1;
+      margin: 0;
+    }
+     #nickname-modal {
+      display: none;
+    }
+    .centerthing {
+text-align: center;
+    }
+     .centerthing3 {
+text-align: center;
+ display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+   margin-bottom: 20px;
+    }
+    .centerthing2 {
+ text-shadow: 0 0 1px #fff, 0 0 1px #fff, 0 0 1px #fff;
+    }
+    button,
+input[type="button"],
+input[type="submit"] {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: #fff;
+  color: black;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+button:hover,
+input[type="button"]:hover,
+input[type="submit"]:hover {
+  background-color: #e6e6e6;
+}
+.uhsendbutton {
+  text-align: center;
+  margin-left: 5px;
+}
+.message-user.mod {
+  text-shadow: 0 0 2px #6417e8, 0 0 2px #6417e8, 0 0 2px #6417e8;
+  color: rgb(100, 23, 232);
+}
+     .file {
+text-align: center;
+width: 200px;
+height: 20px;
+background-color:white;
+outline: 5px, solid, grey;
+border-radius: 10px;
+color:black;
+margin: 5px;
+flex-wrap:wrap;
+    }
+     .credit1 {
+      color: white;
+        position: fixed;
+        bottom: 0;
+        text-align: center;
+        opacity: 0.7;
+        padding: 5;
+           bottom: 10px;
+    right: 10px;
+      } 
+      .settingsicon {
+        position: fixed;
+        bottom: 0;
+        text-align: center;
+        opacity: 0.7;
+        padding: 5;
+           top: 10px;
+    right: 10px;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+      }
+      #chat {
+  max-height: 70vh;
+    overflow-y: auto;
+    border: 5px solid #fff;
+    padding: 10px;
+    padding-left: 20px; 
+    margin-bottom: 50px;
+    border-radius: 5px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.custom-file-upload input[type="file"] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+.custom-file-upload label {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #fff;
+  color: black;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.custom-file-upload label:hover {
+  background-color: grey;
+}
+a:link {
+  color:white;
+}
+a:visited {
+  color:white;
+}
+      #particle-container {
+        z-index: -1;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+     overflow: hidden; 
+       width: 100vw;
+  height: 100vh;
+}
+      .backgroundspan {
+        z-index: -1;
+        box-shadow: 0 0 3px #fff, 0 0 7px #fff, 0 0 7px #fff;
+         background-color: white;
+    width: 1vmin;
+    height: 1vmin;
+    border-radius: 1vmin;
+    backface-visibility: hidden;
+    position: absolute;
+    animation-duration: 39;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+   animation: move infinite linear, fadeinout infinite linear;
+      }
+      @keyframes move {
+    to {
+        transform: translate(var(--x), var(--y));
+    }
+}
+    @keyframes fadeinout {
+  0% { opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { opacity: 0; }
+}
+input {
+  width: 500px;
+  text-align:center;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+.message-header {
+  display: flex; 
+  align-items: center; 
+  opacity: 100%;
+  transition: opacity 0.2s;
+}
+.topbar {
+  display: flex;
+  align-items: center; 
+  justify-content: flex-start;
+  background-color: black;
+  color: white;
+  border: 5px solid white;
+  padding: 20px;
+  width: 100%;
+  height: 50px;
+  z-index: 20;
+   top: 0;
+    box-shadow: 0 0 3px #fff, 0 0 7px #fff, 0 0 7px #fff;
+    position: fixed;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+.topbar h1 {
+  margin: 0;
+  padding: 20px; 
+}
+.topbar h2 {
+  margin: 0;
+  padding: 50px; 
+}
+.a {
+  justify-content: flex-end;
+}
+.tahg {
+ margin-left: 20px;
+}
+.message-image {
+  width: 40px; 
+  height: 40px; 
+  border-radius: 50%; 
+  margin-right: 10px; 
+  opacity: 100%;
+  transition: opacity 0.2s;
+}
+.message-block.new {
+  opacity: 0;
+}
+.message-block.fade-in {
+  opacity: 1;
+  transition: opacity 0.5s ease-in, transform 0.5s ease-in;
+}
+.message-user {
+
+}
+.stupidcontent {
+    min-height: 1500px;
+    padding: 90px;
+}
+.message-context {
+  opacity: 100%;
+  transition: opacity 0.2s;
+ margin-left: 50px;
+ }
+ .halloweentext {
+  text-shadow: 0 0 2px #FFA500, 0 0 4px #FFA500, 0 0 4px #FFA500;
+  color: orange;
+  text-align: center;
+ }
+ 
+  .logs {
+    border: 5px solid #fff;
+border-radius: 10px;
+        text-align: left;
+ text-shadow: 0 0 1px #fff, 0 0 1px #fff, 0 0 1px #fff;
+      }
+      .halloweencolor {
+color: rgb(245, 125, 27);
+font-style: normal;
+}
+    </style>
+    </head>
+<body>
+  <div id="topbar" class="topbar">
+        <h1 class="tahg"> About Me! (ARandomIPerson) </h1>
+      </div>
+      <div class="stupidcontent">
+<h1 class="centerthing"> hello! </h1>
+<h3 class="centerthing"> you can call me arandomperson or arandom or SMTH idk but you can call me niko (nickname from a server im in)</h3>
+<div class="logs">
+<h3 class="centerthing"> hey, so you want to know about me, well yeah you came here to know about me... soo here you go! </h3>
+<h4 class="centerthing"> i have been coding for about 3 years now (mostly luau on roblox studio) but i recently started learning javascript!</h4>
+<h4 class="centerthing"> i love a bunch of video games (mostly indie) ONESHOT IS THE BEST ONE EVER TRUST GO PLAY IT</h4>
+<h4 class="centerthing"> oh yeah uh other games i play are mostly roblox but i do play some steam games time to time </h4>
+<h4 class="centerthing"> im mostly online all of the time so you can mostly respond to me at any time </h4>
+<h4 class="centerthing"> i love music, MOSTLY vocaloid or video game osts (i know my music taste is bad im sorry) </h4>
+<P class="centerthing"> example</P>
+<div class="centerthing3">
+<button class="centerthing3" id="button" onclick=music()> music button </button>
+</div>
+<p class="centerthing" id="smth"> </p>
+<h4 class="centerthing"> im taken by ari I LOVE HER </h4>
+<h4 class="centerthing"> im mostly shy irl but i can be really active online and comfortable with talking to random people (vc scares me a bit)</h4>
+<h4 class="centerthing"> im in high school</h4>
+<h4 class="centerthing"> got rly nothing else to say, oh yeah i forgot, im he/him! anyways see ya!</h4>
+</div>
+</div>
+<div id="particle-container" >
+      </div>
+      <p class="credit1"> made by <a href="https://drive.google.com/file/d/1v_FQJ5SaxCJV0CJZaI5XARR5SpFm54-W/view?usp=sharing"> @arandomiperson </a> </p>
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    const particleContainer = document.getElementById('particle-container');
+    const numberOfParticles = 50;
+
+    function getRandomValue(min, max) {
+      return Math.random() * (max - min) + min;
+    }
+    
+    for (let i = 0; i < numberOfParticles; i++) {
+      const randomuthing = Math.floor(Math.random() * (3 - 1 + 1)) + 1;
+      const span = document.createElement('span');
+      span.className = 'backgroundspan';
+
+      const randomX = getRandomValue(-100, 100);
+      const randomY = getRandomValue(-100, 100);
+      const randomDuration = getRandomValue(20, 60);
+      const randomDelay = getRandomValue(-randomDuration, 0);
+      const initialX = getRandomValue(0, 100);
+      const initialY = getRandomValue(0, 100);
+      
+      span.style.left = `${initialX}vw`;
+      span.style.top = `${initialY}vh`;
+      span.style.setProperty('--x', `${randomX}vw`);
+      span.style.setProperty('--y', `${randomY}vh`);
+      span.style.animationDuration = `${randomDuration}s`;
+      span.style.animationDelay = `${randomDelay}s`;
+
+      if (randomuthing === 1) {
+        span.style.backgroundColor = "white";
+      } else if (randomuthing === 2) {
+        span.style.backgroundColor = "white";
+      }
+
+      particleContainer.appendChild(span);
+    }
+});
+function music() {
+  const random = Math.floor(Math.random() * 4) + 1;
+  if (random == 1) {
+    const audio = new Audio('music.mp3');
+         audio.play();
+         document.getElementById("smth").textContent = "Est-ce ton âme || FORSAKEN OST"
+          document.getElementById("button").disabled = true;
+          alert("refresh for another track! (randomized cuz idk)")
+  }
+  if (random == 2) {
+    const audio = new Audio('music2.mp3');
+         audio.play();
+         document.getElementById("smth").textContent = "nil.INCIDENT || FORSAKEN OST"
+          document.getElementById("button").disabled = true;
+          alert("refresh for another track! (randomized cuz idk)")
+  }
+  if (random == 3) {
+    const audio = new Audio('music3.mp3');
+         audio.play();
+         document.getElementById("smth").textContent = "somewhere, someday, || Tanger"
+          document.getElementById("button").disabled = true;
+          alert("refresh for another track! (randomized cuz idk)")
+  }
+  if (random == 4) {
+    const audio = new Audio('music4.mp3');
+         audio.play();
+         document.getElementById("smth").textContent = "weathergirl ft. Eleanor Forte"
+          document.getElementById("button").disabled = true;
+          alert("refresh for another track! (randomized cuz idk)")
+  }
+}
+      </script>
+</body>
+</html>
